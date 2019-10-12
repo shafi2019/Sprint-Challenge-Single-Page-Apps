@@ -31,10 +31,18 @@ export default function CharacterList() {
       })
     }, []);
 
-
+    const filterName = event => {
+      let items = initialCharacter;
+      items = items.filter(
+        item =>
+        item.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1
+      );
+      setCharacter(items);
+    }
 
   return (
     <CharacterListStyling>
+    <SearchForm onSearch={filterName} />
     <section className="character-list">
       {Character.map((character) =>
         <CharacterCard
