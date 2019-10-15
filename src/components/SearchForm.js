@@ -5,10 +5,9 @@ function Search(props) {
     <div className="SearchForm">
     <form>
       <label>
-        Name : 
-        <input type="search" onChange={props.onSearch} />
-      </label>
       <button>Search by Name</button>
+        <input className="SearchBox" placeholder="Search" type="search" onChange={props.onSearch} />
+      </label>
     </form>
   
   </div>
